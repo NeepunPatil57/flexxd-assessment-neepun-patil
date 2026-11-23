@@ -1,5 +1,6 @@
 import express from "express";
 import bookingRoutes from "./routes/bookingRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 const PORT = process.env.PORT || 3000;
 
@@ -8,6 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/bookings", bookingRoutes);
+app.use("/users", userRoutes);
 
 app.use((request, response) => {
   response.status(404).json({ error: "Route not found" });

@@ -12,3 +12,8 @@
 - Body `{ redemptionCode }` (string, exact match). Sets `redeemed: true`, returns 200 + booking.
 - Errors: 400 missing/non-string code or bad JSON; 404 code not found; 409 already redeemed.
 - Verified via curl: redeem ok, second redeem 409, unknown code 404, empty body 400, number code 400, bad JSON 400, booking route still works.
+
+## 2026-11-23 — GET /users/:id
+- Returns 200 + `{ id, name, visitCredits, bookings: [...] }` (all user's bookings, redeemed or not).
+- Errors: 404 unknown user.
+- Verified via curl: fresh user empty bookings, credits drop + bookings listed after 2 bookings + 1 redeem, zero-credit user, unknown id 404.

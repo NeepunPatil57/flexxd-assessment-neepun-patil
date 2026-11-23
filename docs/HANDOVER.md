@@ -7,6 +7,7 @@ All work gets recorded in docs/HANDOVER.md, docs/LEGACY.md, docs/ISSUES.md at th
 - Seed (fixed UUID ids, see store.js): users Asha (3 credits), Ben (0 credits); venues Mumbai Gym (cap 2), Bangalore Gym (cap 10). Venues hold `currentPeopleCount` (bookings so far).
 - `POST /bookings` with validation, 404s, credit + capacity (`totalCapacity`) checks, redemption code.
 - `POST /bookings/redeem`: marks booking redeemed; 404 unknown, 409 already redeemed.
+- `GET /users/:id`: user + credits + all bookings; 404 unknown.
 
 ## Left
 - No further endpoints requested yet.
@@ -19,4 +20,5 @@ All work gets recorded in docs/HANDOVER.md, docs/LEGACY.md, docs/ISSUES.md at th
 - `server/src/index.js` — bootstrap, JSON parse error + 404/500 handlers.
 - `server/src/configs/store.js` — seed data / in-memory store.
 - `server/src/routes/bookingRoutes.js`, `controllers/bookingController.js`, `services/bookingService.js`.
+- `server/src/routes/userRoutes.js`, `controllers/userController.js`, `services/userService.js`.
 - `server/src/utils/httpError.js` — error with status.
