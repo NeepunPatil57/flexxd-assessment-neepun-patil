@@ -1,0 +1,21 @@
+# Handover
+
+All work gets recorded in docs/HANDOVER.md, docs/LEGACY.md, docs/ISSUES.md at the end of each task.
+
+## Done
+- Express backend (JS, ESM) in `server/`, in-memory store, nodemon dev script.
+- Seed (fixed UUID ids, see store.js): users Asha (3 credits), Ben (0 credits); venues Mumbai Gym (cap 2), Bangalore Gym (cap 10). Venues hold `currentPeopleCount` (bookings so far).
+- `POST /bookings` with validation, 404s, credit + capacity (`totalCapacity`) checks, redemption code.
+
+## Left
+- Further endpoints (e.g. redeem) not built yet; await user request.
+
+## Next steps
+- Run: `cd server && npm run dev` (port 3000, `PORT` env overrides).
+
+## Key files
+- `assumptions.txt` — business assumptions.
+- `server/src/index.js` — bootstrap, JSON parse error + 404/500 handlers.
+- `server/src/configs/store.js` — seed data / in-memory store.
+- `server/src/routes/bookingRoutes.js`, `controllers/bookingController.js`, `services/bookingService.js`.
+- `server/src/utils/httpError.js` — error with status.

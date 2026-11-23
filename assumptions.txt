@@ -1,0 +1,14 @@
+1. Bookings a are always for today 
+    I count bookings are made for today only (UTC Date)
+    New day means a fresh start 
+
+2. One Booking is equal to 1 credit
+
+3. A user can book same venue more than once per day 
+
+4. Anyone holding the code can reedeem it No auth
+
+5.Failed Request change nothing
+I wil check user,venue user credits and capacity then only I will deduct the credits .also redeemed booking cannot be used twice and cannot be refunded 
+
+
