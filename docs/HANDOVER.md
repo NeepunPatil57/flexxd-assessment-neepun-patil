@@ -6,9 +6,10 @@ All work gets recorded in docs/HANDOVER.md, docs/LEGACY.md, docs/ISSUES.md at th
 - Express backend (JS, ESM) in `server/`, in-memory store, nodemon dev script.
 - Seed (fixed UUID ids, see store.js): users Asha (3 credits), Ben (0 credits); venues Mumbai Gym (cap 2), Bangalore Gym (cap 10). Venues hold `currentPeopleCount` (bookings so far).
 - `POST /bookings` with validation, 404s, credit + capacity (`totalCapacity`) checks, redemption code.
+- `POST /bookings/redeem`: marks booking redeemed; 404 unknown, 409 already redeemed.
 
 ## Left
-- Further endpoints (e.g. redeem) not built yet; await user request.
+- No further endpoints requested yet.
 
 ## Next steps
 - Run: `cd server && npm run dev` (port 3000, `PORT` env overrides).

@@ -50,3 +50,20 @@ export function createBooking(userId, venueId) {
 
   return booking;
 }
+
+export function redeemBooking(redemptionCode) {
+  const booking = store.bookings.find(
+    (storedBooking) => storedBooking.redemptionCode === redemptionCode
+  );
+  if (!booking) {
+    throw new HttpError(404, `Redemption code '${redemptionCode}' not found`);
+  }
+
+  if (booking.redeemed) {
+    throw new HttpError(409, "Booking has already been redeemed");
+  }
+
+  booking.redeemed = true;
+
+  return booking;
+}
